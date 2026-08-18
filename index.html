@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>MBTI → DiSC</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="mbti-disc-logo.svg">
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+    <!-- Theme Switch -->
+
+    <div class="theme-switch">
+
+        <button
+            id="yellowMode"
+            onclick="setTheme('yellow')">
+            🟡
+        </button>
+
+        <button
+            id="purpleMode"
+            onclick="setTheme('purple')">
+            🟣
+        </button>
+
+    </div>
+
+
+    <!-- Title -->
+
+    <h1>MBTI → DiSC</h1>
+
+
+    <!-- Steps -->
+
+    <div class="steps">
+
+        <h2>STEPS:</h2>
+
+        <p>1. Do the 16personalities test</p>
+        <p>2. Add the percentages</p>
+        <p>3. Enter them below</p>
+
+    </div>
+
+
+    <!-- MBTI Sliders -->
+
+    <div class="traits">
+
+
+        <!-- I / E -->
+
+        <div class="trait">
+
+            <span>
+                I <span id="iValue">50%</span>
+            </span>
+
+            <input
+                type="range"
+                id="ie"
+                min="0"
+                max="100"
+                value="50"
+                oninput="calculate()">
+
+            <span>
+                E <span id="eValue">50%</span>
+            </span>
+
+        </div>
+
+
+        <!-- N / S -->
+
+        <div class="trait">
+
+            <span>
+                N <span id="nValue">50%</span>
+            </span>
+
+            <input
+                type="range"
+                id="ns"
+                min="0"
+                max="100"
+                value="50"
+                oninput="calculate()">
+
+            <span>
+                S <span id="sValue">50%</span>
+            </span>
+
+        </div>
+
+
+        <!-- T / F -->
+
+        <div class="trait">
+
+            <span>
+                T <span id="tValue">50%</span>
+            </span>
+
+            <input
+                type="range"
+                id="tf"
+                min="0"
+                max="100"
+                value="50"
+                oninput="calculate()">
+
+            <span>
+                F <span id="fValue">50%</span>
+            </span>
+
+        </div>
+
+
+        <!-- J / P -->
+
+        <div class="trait">
+
+            <span>
+                J <span id="jValue">50%</span>
+            </span>
+
+            <input
+                type="range"
+                id="jp"
+                min="0"
+                max="100"
+                value="50"
+                oninput="calculate()">
+
+            <span>
+                P <span id="pValue">50%</span>
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- DiSC -->
+
+    <div class="disc">
+
+        <h2>Estimated DiSC</h2>
+
+
+        <div class="colors">
+
+
+            <div class="color">
+
+                <span class="dot red"></span>
+
+                <span id="rv">
+                    Red x%
+                </span>
+
+            </div>
+
+
+            <div class="color">
+
+                <span class="dot yellow"></span>
+
+                <span id="yv">
+                    Yellow x%
+                </span>
+
+            </div>
+
+
+            <div class="color">
+
+                <span class="dot green"></span>
+
+                <span id="gv">
+                    Green x%
+                </span>
+
+            </div>
+
+
+            <div class="color">
+
+                <span class="dot blue"></span>
+
+                <span id="bv">
+                    Blue x%
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- MBTI Result -->
+
+    <div
+        class="result-box"
+        id="result">
+
+        Your MBTI Type: XXXX
+
+    </div>
+
+
+</div>
+
+
+<!-- Developer -->
+
+<div class="developer">
+
+    <a
+        href="https://github.com/sleepknight8"
+        target="_blank">
+
+        The Best Developer
+
+    </a>
+
+    <p>
+        &copy; 2026 SleepKnight8. All rights reserved.
+    </p>
+
+</div>
+
+
+<script src="index.js"></script>
+
+</body>
+
+</html>
