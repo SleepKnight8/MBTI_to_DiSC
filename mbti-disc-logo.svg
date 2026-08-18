@@ -1,0 +1,20 @@
+<svg width="512" height="512" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+  <!-- Badge background -->
+  <circle cx="120" cy="120" r="108" fill="#101010" stroke="#B58CFF" stroke-width="2.5" stroke-opacity="0.55"/>
+
+  <!-- MBTI side: single solid personality point -->
+  <circle cx="70" cy="120" r="32" fill="#B58CFF"/>
+
+  <!-- Conversion arrow -->
+  <polygon points="104,107 104,133 136,120" fill="#B58CFF"/>
+
+  <!-- DiSC side: circle split into the four DiSC colors -->
+  <path d="M172,120 L210,120 A38,38 0 0,1 172,158 Z" fill="#3178C6" stroke="#101010" stroke-width="2"/>
+  <path d="M172,120 L172,158 A38,38 0 0,1 134,120 Z" fill="#2E9E5B" stroke="#101010" stroke-width="2"/>
+  <path d="M172,120 L134,120 A38,38 0 0,1 172,82 Z" fill="#E4483B" stroke="#101010" stroke-width="2"/>
+  <path d="M172,120 L172,82 A38,38 0 0,1 210,120 Z" fill="#F2B705" stroke="#101010" stroke-width="2"/>
+
+  <!-- Labels -->
+  <text x="70" y="190" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="17" letter-spacing="1.5" fill="#B58CFF">MBTI</text>
+  <text x="172" y="190" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="17" letter-spacing="1.5" fill="#F2F2F2">DiSC</text>
+</svg>
