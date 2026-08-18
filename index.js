@@ -100,12 +100,14 @@ function calculate() {
 
     // Calculate MBTI type
 
+    // Calculate MBTI type
+
     let mbti = "";
 
-    mbti += e > i ? "E" : "I";
-    mbti += s > n ? "S" : "N";
-    mbti += f > t ? "F" : "T";
-    mbti += p > j ? "P" : "J";
+    mbti += e > i ? "E" : e < i ? "I" : "X";
+    mbti += s > n ? "S" : s < n ? "N" : "X";
+    mbti += f > t ? "F" : f < t ? "T" : "X";
+    mbti += p > j ? "P" : p < j ? "J" : "X";
     
     document.getElementById("result").textContent =
         `Your MBTI Type: ${mbti}`;
