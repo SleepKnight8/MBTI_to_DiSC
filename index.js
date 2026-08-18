@@ -1,5 +1,3 @@
-// Calculate MBTI percentages
-
 function calculate() {
 
     const ie = Number(document.getElementById("ie").value);
@@ -7,7 +5,7 @@ function calculate() {
     const tf = Number(document.getElementById("tf").value);
     const jp = Number(document.getElementById("jp").value);
 
-    // Calculate percentages
+    // MBTI percentages
     const i = 100 - ie;
     const e = ie;
 
@@ -20,7 +18,8 @@ function calculate() {
     const j = 100 - jp;
     const p = jp;
 
-    // Show percentages
+
+    // Display percentages
     document.getElementById("iValue").textContent = `${i}%`;
     document.getElementById("eValue").textContent = `${e}%`;
 
@@ -34,27 +33,21 @@ function calculate() {
     document.getElementById("pValue").textContent = `${p}%`;
 
 
-    ///////////////////////////////
-    // DiSC raw scores
-
+    // DiSC estimate
     const red = (e + t + j) / 3;
     const yellow = (e + n + f) / 3;
     const green = (i + s + f) / 3;
     const blue = (i + n + t) / 3;
 
-    // Total raw score
-
     const total = red + yellow + green + blue;
 
-    // Convert to percentages
+    const redPercent = red / total * 100;
+    const yellowPercent = yellow / total * 100;
+    const greenPercent = green / total * 100;
+    const bluePercent = blue / total * 100;
 
-    const redPercent = (red / total) * 100;
-    const yellowPercent = (yellow / total) * 100;
-    const greenPercent = (green / total) * 100;
-    const bluePercent = (blue / total) * 100;
 
-    // Show DiSC percentages
-
+    // Display DiSC
     document.getElementById("rv").textContent =
         `Red ${redPercent.toFixed(2)}%`;
 
@@ -67,25 +60,25 @@ function calculate() {
     document.getElementById("bv").textContent =
         `Blue ${bluePercent.toFixed(2)}%`;
 
-    /////////
 
-    // Calculate MBTI type
-
-    // Calculate MBTI type
-
+    // MBTI type
     let mbti = "";
 
     mbti += e > i ? "E" : e < i ? "I" : "X";
     mbti += s > n ? "S" : s < n ? "N" : "X";
     mbti += f > t ? "F" : f < t ? "T" : "X";
     mbti += p > j ? "P" : p < j ? "J" : "X";
-    
+
     document.getElementById("result").textContent =
         `Your MBTI Type: ${mbti}`;
-
-
 }
 
-// Display saved values immediately
 
+// Make sliders update automatically
+document.querySelectorAll('input[type="range"]').forEach(slider => {
+    slider.addEventListener("input", calculate);
+});
+
+
+// Calculate initial values
 calculate();
